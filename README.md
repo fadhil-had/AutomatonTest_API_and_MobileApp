@@ -31,16 +31,16 @@ There are 2 APIs in this automation test. Get API and POST API.
 
 - Get API
 Get API *(https://jsonplaceholder.typicode.com/posts)* is API to get data with configuration for each variable:
-  ■ userId -> Integer
-  ■ id -> Integer
-  ■ title -> String
-  ■ body -> String
+  1. userId -> Integer
+  2. id -> Integer
+  3. title -> String
+  4. body -> String
 
 - Post API
 Post API *(https://jsonplaceholder.typicode.com/posts)* is API to post new data with the payload consisting of:
-  ■ title -> String
-  ■ body -> String
-  ■ userId -> Integer
+  1. title -> String
+  2. body -> String
+  3. userId -> Integer
 
  #### Code Steps
   1. Install RestAssured
