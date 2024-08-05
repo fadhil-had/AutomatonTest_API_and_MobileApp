@@ -26,7 +26,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '22'
-        distribution: 'oracle'
+        distribution: 'corretto'
         cache: maven
     - uses: browser-actions/setup-chrome@latest
     - run: chrome --version
