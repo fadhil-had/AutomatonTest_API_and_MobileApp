@@ -17,7 +17,6 @@ import java.util.Random;
 public class login {
 
     private AndroidDriver driver;
-    Random rand = new Random();
 
     static String name = "Fadhil-Pintu";
     static String email = "fadhilpintu@gmail.com";
