@@ -6,7 +6,7 @@ Task for automation testing for API and Mobile App testing
 1. Fork this repository.
 2. Clone, i.e, download your copy of the repository to your local machine using
 ```
-git clone https://github.com/[your_username]/TestPintu.git
+git clone https://github.com/[your_username]/AutomatonTest_API_and_MobileApp.git
 ```
 3. Import the project in IntelliJ IDEA.
 4. Make your changes.
