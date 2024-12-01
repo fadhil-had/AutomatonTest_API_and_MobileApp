@@ -11,10 +11,7 @@ import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.QueryableRequestSpecification;
 import io.restassured.specification.SpecificationQuerier;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.hamcrest.Description;
-import org.hamcrest.Matcher;
 import org.hamcrest.MatcherAssert;
-import org.hamcrest.StringDescription;
 
 import java.io.InputStream;
 
@@ -41,7 +38,6 @@ public class baseRequest {
     }
 
     public static Response getAPI(String endPoint) {
-        RequestSpecification request = requestRewrite();
         Response response = given()
                 .when()
                 .get(endPoint);
