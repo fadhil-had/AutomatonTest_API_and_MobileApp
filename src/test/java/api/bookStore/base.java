@@ -1,12 +1,11 @@
 package api.bookStore;
 
-import com.github.javafaker.Faker;
 import io.restassured.RestAssured;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
 
 public class base {
-    @BeforeMethod
+    @BeforeTest
     public void setup() {
         RestAssured.baseURI = "https://bookstore.toolsqa.com";
     }

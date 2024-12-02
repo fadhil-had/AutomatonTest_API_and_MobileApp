@@ -8,8 +8,6 @@ import java.util.Map;
 import static io.restassured.RestAssured.*;
 
 public class bookStore {
-    private static final String urlDefault = "https://bookstore.toolsqa.com";
-    private String payLoad;
 
     public static Response getApi(String url){
         return given().
@@ -30,7 +28,7 @@ public class bookStore {
                 .header("Authorization", "Bearer " + token)
                 .body(payload)
                 .when()
-                .post(urlDefault+endPoint)
+                .post(endPoint)
                 .prettyPeek();
     }
 
@@ -41,7 +39,7 @@ public class bookStore {
                 .and()
                 .body(payload)
                 .when()
-                .post(urlDefault+endPoint)
+                .post(endPoint)
                 .prettyPeek();
     }
 }
