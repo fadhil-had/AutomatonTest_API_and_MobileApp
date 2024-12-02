@@ -11,8 +11,6 @@ import org.testng.Assert;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.List;
-import java.util.Random;
 
 public class login {
 

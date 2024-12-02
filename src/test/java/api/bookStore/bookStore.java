@@ -5,22 +5,43 @@ import io.restassured.response.Response;
 
 import java.util.Map;
 
-import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.*;
 
 public class bookStore {
-    private static String urlDefault = "https://bookstore.toolsqa.com";
+    private static final String urlDefault = "https://bookstore.toolsqa.com";
     private String payLoad;
 
     public static Response getApi(String url){
-        Response response = given().
+        return given().
                 accept(ContentType.JSON).
-                when().get(urlDefault+url).
+                when().get(url).
                 prettyPeek();
-        return response;
     }
 
     public static Response getApi(String url, String param){
-        Response response = given().accept(ContentType.JSON).when().get(urlDefault+url+String.format("?ISBN=%s",param)).prettyPeek();
-        return response;
+        return given().accept(ContentType.JSON).when().get(url+param).prettyPeek();
+    }
+
+    public static Response postApi(Map<String, Object> payload, String endPoint, String token) {
+        return given()
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .and()
+                .header("Authorization", "Bearer " + token)
+                .body(payload)
+                .when()
+                .post(urlDefault+endPoint)
+                .prettyPeek();
+    }
+
+    public static Response postApi(Map<String, Object> payload, String endPoint) {
+        return given()
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .and()
+                .body(payload)
+                .when()
+                .post(urlDefault+endPoint)
+                .prettyPeek();
     }
 }

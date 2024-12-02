@@ -1,14 +1,13 @@
 package api.bookStore;
 
 import io.restassured.response.Response;
-import org.example.baseRequest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class bookStoreBase {
+public class bookStoreBase extends base {
     public String isbn;
 
     @Test
@@ -22,6 +21,14 @@ public class bookStoreBase {
 
     @Test
     public void getOneBook(){
-        bookStore.getApi("/BookStore/v1/Book?ISBN=%s",isbn);
+        bookStore.getApi("/BookStore/v1/Book?ISBN=",isbn);
+    }
+
+    @Test
+    public void postOneBook(){
+        Map<String, Object> request =  new HashMap<>();
+        request.put("userId", "e01393d8-abab-42d0-83ee-b9087d323cac");
+        request.put("isbn", "9781449325862");
+        bookStore.postApi(request,"/BookStore/v1/Books");
     }
 }
