@@ -6,8 +6,6 @@ import org.testng.annotations.BeforeMethod;
 
 
 public class base {
-    public Faker faker = new Faker();
-
     @BeforeMethod
     public void setup() {
         RestAssured.baseURI = "https://bookstore.toolsqa.com";
